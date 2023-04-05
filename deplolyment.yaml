@@ -1,0 +1,18 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: simple-echo-app
+spec:
+  selector:
+    matchLabels:
+      app: simple-echo-app
+  template:
+    metadata:
+      labels:
+        app: simple-echo-app
+    spec:
+      containers:
+      - name: simple-echo-app
+        image: simple-echo-app:v0.0.1
+        ports:
+        - containerPort: 3000
